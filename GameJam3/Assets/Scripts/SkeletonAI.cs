@@ -30,8 +30,9 @@ public class SkeletonAI : MonoBehaviour
 
     IEnumerator TakeHealth()
     {
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(1.1f);
         HealthMonitor.healthPoint -= 10;
+        yield return new WaitForSeconds(1f);
         isAttacking = false;
         skeleton.GetComponent<Animator>().Play("Walk");
         skeleton.GetComponent<NavigationAI>().enabled = true;

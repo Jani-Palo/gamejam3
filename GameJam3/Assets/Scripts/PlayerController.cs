@@ -4,37 +4,35 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public CharacterController characterController;
-    private Vector3 direction;
-    public float speed = 10;
-    public float jumpForce = 10;
-    public float gravity = -20f;
-    public Transform groundCheck; 
-    public LayerMask ground;
+    public float speed = 10f;
+    public float JumpForce = 10f;
+    float HorizontalInput;
+    private Rigidbody PlayerRb;
+    public bool IsOnground = true;
     
     
     // Start is called before the first frame update
     void Start()
     {
-
+        PlayerRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        direction.x = horizontalInput * speed;
-        bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.15f, ground);
-        direction.y += gravity * Time.deltaTime;
-        if (isGrounded)
+        HorizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * HorizontalInput * speed * Time.deltaTime);
+
+        if(Input.GetKeyDown(KeyCode.Space)&& IsOnground)
         {
-            if (Input.GetButtonDown("Jump"))
-            {
-                direction.y = jumpForce;
-            }
+            
+            PlayerRb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+            IsOnground = false;
         }
-
-        characterController.Move(direction * Time.deltaTime);
-
+        
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        IsOnground = true;
     }
 }

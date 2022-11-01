@@ -27,7 +27,7 @@ public class dwa4 : MonoBehaviour
     void turning()
     {
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = 100;
+        mousePos.z = 10;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
         Vector2 direc = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);

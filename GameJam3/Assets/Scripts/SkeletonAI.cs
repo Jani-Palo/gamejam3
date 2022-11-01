@@ -11,6 +11,7 @@ public class SkeletonAI : MonoBehaviour
         if (isAttacking == false)
         {
             isAttacking = true;
+            this.GetComponent<MeshCollider>().enabled = false;
             skeleton.GetComponent<Animator>().Play("Attack");
             skeleton.GetComponent<NavigationAI>().enabled = false;
             skeleton.GetComponent<NavMeshAgent>().enabled = false;
@@ -22,12 +23,19 @@ public class SkeletonAI : MonoBehaviour
         skeleton.GetComponent<Animator>().Play("Walk");
         skeleton.GetComponent<NavigationAI>().enabled = true;
         skeleton.GetComponent<NavMeshAgent>().enabled = true;
+        StopCoroutine(TakeHealth());
+        this.GetComponent<MeshCollider>().enabled = true;
+        isAttacking=false;
     }
 
     IEnumerator TakeHealth()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2.2f);
         HealthMonitor.healthPoint -= 10;
         isAttacking = false;
+        skeleton.GetComponent<Animator>().Play("Walk");
+        skeleton.GetComponent<NavigationAI>().enabled = true;
+        skeleton.GetComponent<NavMeshAgent>().enabled = true;
+        this.GetComponent<MeshCollider>().enabled = true;
     }
 }

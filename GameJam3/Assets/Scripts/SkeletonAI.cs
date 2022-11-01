@@ -4,8 +4,15 @@ using UnityEngine;
 using UnityEngine.AI;
 public class SkeletonAI : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip slash;
+    public AudioClip Walk;
     public GameObject skeleton;
     public bool isAttacking = false;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (isAttacking == false)
@@ -21,16 +28,19 @@ public class SkeletonAI : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         skeleton.GetComponent<Animator>().Play("Walk");
+        audioSource.PlayOneShot(Walk);
         skeleton.GetComponent<NavigationAI>().enabled = true;
         skeleton.GetComponent<NavMeshAgent>().enabled = true;
         StopCoroutine(TakeHealth());
         this.GetComponent<MeshCollider>().enabled = true;
         isAttacking=false;
+
     }
 
     IEnumerator TakeHealth()
     {
         yield return new WaitForSeconds(1.1f);
+        audioSource.PlayOneShot(slash);
         HealthMonitor.healthPoint -= 50;
         yield return new WaitForSeconds(1f);
         isAttacking = false;

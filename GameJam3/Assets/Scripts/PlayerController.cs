@@ -9,8 +9,9 @@ public class PlayerController : MonoBehaviour
     float HorizontalInput;
     private Rigidbody PlayerRb;
     public bool IsOnground = true;
-    
-    
+    //public bool facingRight = true;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,17 +21,23 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         HorizontalInput = Input.GetAxis("Horizontal");
+       
+
         transform.Translate(Vector3.right * HorizontalInput * speed * Time.deltaTime);
 
-        if(Input.GetKeyDown(KeyCode.Space)&& IsOnground)
+
+        if (Input.GetKeyDown(KeyCode.Space) && IsOnground)
         {
-            
+
             PlayerRb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
             IsOnground = false;
         }
-        
+
+
     }
+   
     private void OnCollisionEnter(Collision collision)
     {
         IsOnground = true;

@@ -18,12 +18,13 @@ public class dwa4 : MonoBehaviour
     {
 
         turning();
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             shoot();
-             
+
         }
     }
+ 
     void turning()
     {
         Vector3 mousePos = Input.mousePosition;

@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     float HorizontalInput;
     private Rigidbody PlayerRb;
     public bool IsOnground = true;
-    //public bool facingRight = true;
 
 
     // Start is called before the first frame update
@@ -25,7 +24,7 @@ public class PlayerController : MonoBehaviour
         HorizontalInput = Input.GetAxis("Horizontal");
        
 
-        transform.Translate(Vector3.right * HorizontalInput * speed * Time.deltaTime);
+        transform.Translate(Vector3.right *-1  * HorizontalInput * speed * Time.deltaTime);
 
 
         if (Input.GetKeyDown(KeyCode.Space) && IsOnground)

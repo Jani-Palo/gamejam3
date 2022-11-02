@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 132539312}
   m_Layer: 3
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 40
@@ -2150,7 +2150,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4907852794953538667, guid: 08e487b046e90e341ada34e6656bd302, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 08e487b046e90e341ada34e6656bd302, type: 3}
 --- !u!1001 &705239412
 PrefabInstance:

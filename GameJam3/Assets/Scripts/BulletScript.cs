@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    float speed = 28;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float bulletSpeed = 10;
+    public Rigidbody rb;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
-        
+        rb = GetComponent<Rigidbody>();
+    }
+   public void Fire()
+    {
+        rb.AddForce (transform.right * bulletSpeed);
     }
 }
+ 

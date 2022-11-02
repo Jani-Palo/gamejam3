@@ -16,4 +16,12 @@ public class NavigationAI : MonoBehaviour
     {
         agent.SetDestination(destination.transform.position);
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("ASD");
+        if (other.gameObject.tag == "Bullet")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

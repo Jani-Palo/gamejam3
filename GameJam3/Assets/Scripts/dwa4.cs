@@ -39,7 +39,8 @@ public class dwa4 : MonoBehaviour
     void shoot()
     {
 
-        GameObject projectile = (GameObject)Instantiate(Bullet, Spawn.transform.position, Quaternion.identity);
-        projectile.transform.right = transform.right;
+        GameObject projectile = (GameObject)Instantiate(Bullet, Spawn.transform);
+        projectile.transform.parent = null;
+        projectile.GetComponent<BulletScript>().Fire(); 
     }
 }

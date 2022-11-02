@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
             PlayerRb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
             IsOnground = false;
         }
+        else
+        {
+            PlayerRb.AddForce(transform.up * -JumpForce);
+        }
 
 
     }

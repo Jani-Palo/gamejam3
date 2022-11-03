@@ -18,10 +18,6 @@ public class NavigationAI : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("ASD");
-        if (other.gameObject.tag == "Bullet")
-        {
-            Destroy(this.gameObject);
-        }
+        
     }
 }

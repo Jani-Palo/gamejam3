@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 10f;
-    public float JumpForce = 13f;
+    public float JumpForce = 13f * Time.deltaTime;
     float HorizontalInput;
     private Rigidbody PlayerRb;
     public bool IsOnground = true;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            PlayerRb.AddForce(transform.up* - JumpForce);
+            PlayerRb.AddForce(transform.up* -JumpForce);
         }
         if(HorizontalInput != 0)
         {

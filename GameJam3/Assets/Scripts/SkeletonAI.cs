@@ -24,7 +24,6 @@ public class SkeletonAI : MonoBehaviour
                 this.GetComponent<MeshCollider>().enabled = false;
                 skeleton.GetComponent<Animator>().Play("Attack");
                 skeleton.GetComponent<NavigationAI>().enabled = false;
-                skeleton.GetComponent<NavMeshAgent>().enabled = false;
                 StartCoroutine(TakeHealth());
             }
         }
@@ -36,7 +35,6 @@ public class SkeletonAI : MonoBehaviour
             skeleton.GetComponent<Animator>().Play("Walk");
             audioSource.PlayOneShot(Walk);
             skeleton.GetComponent<NavigationAI>().enabled = true;
-            skeleton.GetComponent<NavMeshAgent>().enabled = true;
             StopCoroutine(TakeHealth());
             this.GetComponent<MeshCollider>().enabled = true;
             isAttacking = false;
@@ -53,7 +51,6 @@ public class SkeletonAI : MonoBehaviour
         isAttacking = false;
         skeleton.GetComponent<Animator>().Play("Walk");
         skeleton.GetComponent<NavigationAI>().enabled = true;
-        skeleton.GetComponent<NavMeshAgent>().enabled = true;
         this.GetComponent<MeshCollider>().enabled = true;
     }
 }

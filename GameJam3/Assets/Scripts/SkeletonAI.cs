@@ -9,6 +9,7 @@ public class SkeletonAI : MonoBehaviour
     public AudioClip Walk;
     public GameObject skeleton;
     public bool isAttacking = false;
+    public GameObject Player;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -27,6 +28,7 @@ public class SkeletonAI : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        if(Player.gameObject)
         skeleton.GetComponent<Animator>().Play("Walk");
         audioSource.PlayOneShot(Walk);
         skeleton.GetComponent<NavigationAI>().enabled = true;

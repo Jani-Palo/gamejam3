@@ -42,5 +42,6 @@ public class dwa4 : MonoBehaviour
         GameObject projectile = (GameObject)Instantiate(Bullet, Spawn.transform);
         projectile.transform.parent = null;
         projectile.GetComponent<BulletScript>().Fire(); 
+        
     }
 }

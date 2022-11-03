@@ -6,6 +6,7 @@ public class dwa4 : MonoBehaviour
 {
     public GameObject Bullet;
     public GameObject Spawn;
+    public ParticleSystem Particle;
     public float speed = .5f;
     // Start is called before the first frame update
     void Start()
@@ -38,8 +39,8 @@ public class dwa4 : MonoBehaviour
 
     void shoot()
     {
-
         GameObject projectile = (GameObject)Instantiate(Bullet, Spawn.transform);
+        Particle = Instantiate(Particle, Spawn.transform);
         projectile.transform.parent = null;
         projectile.GetComponent<BulletScript>().Fire(); 
         

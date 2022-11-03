@@ -9,6 +9,9 @@ public class dwa4 : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip beam;
     public float speed = .5f;
+
+    public float fireRate = 0.5f;
+    private float nextFire = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +23,9 @@ public class dwa4 : MonoBehaviour
     {
 
         turning();
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > nextFire)
         {
+            nextFire = Time.time + fireRate;
             shoot();
 
         }

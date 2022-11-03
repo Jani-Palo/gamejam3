@@ -10,7 +10,7 @@ public class dwa4 : MonoBehaviour
     public AudioClip beam;
     public float speed = .5f;
 
-    public float fireRate = 0.5f;
+    public float fireRate = 0.8f;
     private float nextFire = 0.0f;
     // Start is called before the first frame update
     void Start()

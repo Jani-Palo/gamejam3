@@ -19,10 +19,12 @@ public class NavigationAI : MonoBehaviour
         if (destination.position.x > transform.position.x)
         {
             transform.Translate(-transform.right * speed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0,90,0);
         }
         else
         {
             transform.Translate(transform.right * speed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, -90, 0);
         }
         //agent.SetDestination(destination.transform.position);
     }

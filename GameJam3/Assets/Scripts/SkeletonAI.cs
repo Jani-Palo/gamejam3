@@ -28,7 +28,6 @@ public class SkeletonAI : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if(Player.gameObject)
         skeleton.GetComponent<Animator>().Play("Walk");
         audioSource.PlayOneShot(Walk);
         skeleton.GetComponent<NavigationAI>().enabled = true;

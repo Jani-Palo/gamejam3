@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class LoadScene : MonoBehaviour
+public class LoadScene2 : MonoBehaviour
 {
     SceneManager sceneMan;
     // Start is called before the first frame update

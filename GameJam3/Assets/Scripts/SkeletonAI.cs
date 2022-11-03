@@ -15,7 +15,6 @@ public class SkeletonAI : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        
         if (isAttacking == false)
         {
             isAttacking = true;

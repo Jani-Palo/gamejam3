@@ -3846,7 +3846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d37eae32286eadd44abb5f8a92dc59bc, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d37eae32286eadd44abb5f8a92dc59bc, type: 3}
       propertyPath: m_LocalScale.x
@@ -5148,7 +5148,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 18.67, y: 0, z: 0}
 --- !u!114 &1688339397
 MonoBehaviour:
@@ -5404,6 +5404,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 427716, guid: d7c4a1eaebbfe2647a4f25b1adde5211, type: 3}
   m_PrefabInstance: {fileID: 705239412}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1818100167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5555941741022928789, guid: 3032c8f8c64722e4ab8e4ed4091ea544, type: 3}
+  m_PrefabInstance: {fileID: 5555941741774219623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1818100174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818100167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18784bf66235a445a2d16536aaf0f68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: -8249358079394861206, guid: f12e6c42d8fb9c24791ee71dff03836e, type: 3}
+  shootSpeed: 300
 --- !u!4 &1825766095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 414102, guid: 46641180572a6be4c9bff984c1d87196, type: 3}

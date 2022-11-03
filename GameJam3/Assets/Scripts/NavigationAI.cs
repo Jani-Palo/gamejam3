@@ -16,8 +16,5 @@ public class NavigationAI : MonoBehaviour
     {
         agent.SetDestination(destination.transform.position);
     }
-    private void OnCollisionEnter(Collision other)
-    {
-        
-    }
+   
 }

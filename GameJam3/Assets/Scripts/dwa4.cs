@@ -7,11 +7,13 @@ public class dwa4 : MonoBehaviour
     public GameObject Bullet;
     public GameObject Spawn;
     public ParticleSystem Particle;
+    public AudioSource audioSource;
+    public AudioClip beam;
     public float speed = .5f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,7 +44,9 @@ public class dwa4 : MonoBehaviour
         GameObject projectile = (GameObject)Instantiate(Bullet, Spawn.transform);
         Particle = Instantiate(Particle, Spawn.transform);
         projectile.transform.parent = null;
-        projectile.GetComponent<BulletScript>().Fire(); 
-        
+        projectile.GetComponent<BulletScript>().Fire();
+        audioSource.PlayOneShot(beam);
+
+
     }
 }
